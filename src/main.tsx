@@ -5,7 +5,7 @@ import { StrictMode } from "react";
 import "./styles/index.scss";
 import app from "./firebase/config";
 
-if (app) {
+if (app.options.apiKey) {
     console.log("🔥 Firebase successfully connected");
 } else {
     console.error("❌ Firebase connection failed");
