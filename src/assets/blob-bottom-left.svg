@@ -1,0 +1,62 @@
+<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="g1" x1="0%" y1="0%" x2="66%" y2="100%">
+            <stop offset="20%" stop-color="#ff1744" />
+            <stop offset="80%" stop-color="#ff1744" />
+        </linearGradient>
+        <linearGradient id="g2" x1="0%" y1="0%" x2="66%" y2="100%">
+            <stop offset="20%" stop-color="#d81f3c" />
+            <stop offset="80%" stop-color="#ff1744" />
+        </linearGradient>
+        <linearGradient id="g3" x1="0%" y1="0%" x2="66%" y2="100%">
+            <stop offset="20%" stop-color="#d81f3c" />
+            <stop offset="80%" stop-color="#b32333" />
+        </linearGradient>
+        <linearGradient id="g4" x1="0%" y1="0%" x2="66%" y2="100%">
+            <stop offset="20%" stop-color="#8f222b" />
+            <stop offset="80%" stop-color="#b32333" />
+        </linearGradient>
+        <linearGradient id="g5" x1="0%" y1="0%" x2="66%" y2="100%">
+            <stop offset="20%" stop-color="#8f222b" />
+            <stop offset="80%" stop-color="#6c2024" />
+        </linearGradient>
+        <linearGradient id="g6" x1="0%" y1="0%" x2="66%" y2="100%">
+            <stop offset="20%" stop-color="#4b1c1c" />
+            <stop offset="80%" stop-color="#6c2024" />
+        </linearGradient>
+        <linearGradient id="g7" x1="0%" y1="0%" x2="66%" y2="100%">
+            <stop offset="20%" stop-color="#4b1c1c" />
+            <stop offset="80%" stop-color="#2c1514" />
+        </linearGradient>
+        <linearGradient id="g8" x1="0%" y1="0%" x2="66%" y2="100%">
+            <stop offset="20%" stop-color="#0a0a0a" />
+            <stop offset="80%" stop-color="#2c1514" />
+        </linearGradient>
+    </defs>
+    <g transform="translate(0, 220)">
+        <path
+            d="M0 -216.3C22.1 -197.7 44.1 -179.1 70.8 -170.9C97.5 -162.8 128.8 -165 152 -152C175.3 -139 190.5 -110.7 199.9 -82.8C209.2 -54.9 212.8 -27.4 216.3 0L0 0Z"
+            fill="url(#g8)"></path>
+        <path
+            d="M0 -189.3C19.3 -173 38.6 -156.7 61.9 -149.6C85.3 -142.4 112.7 -144.4 133 -133C153.4 -121.6 166.7 -96.8 174.9 -72.4C183.1 -48 186.2 -24 189.3 0L0 0Z"
+            fill="url(#g7)"></path>
+        <path
+            d="M0 -162.2C16.5 -148.3 33.1 -134.3 53.1 -128.2C73.1 -122.1 96.6 -123.8 114 -114C131.5 -104.3 142.9 -83 149.9 -62.1C156.9 -41.2 159.6 -20.6 162.2 0L0 0Z"
+            fill="url(#g6)"></path>
+        <path
+            d="M0 -135.2C13.8 -123.6 27.6 -111.9 44.2 -106.8C60.9 -101.7 80.5 -103.2 95 -95C109.6 -86.9 119.1 -69.2 124.9 -51.7C130.8 -34.3 133 -17.2 135.2 0L0 0Z"
+            fill="url(#g5)"></path>
+        <path
+            d="M0 -108.2C11 -98.9 22.1 -89.5 35.4 -85.5C48.7 -81.4 64.4 -82.5 76 -76C87.6 -69.5 95.2 -55.3 99.9 -41.4C104.6 -27.4 106.4 -13.7 108.2 0L0 0Z"
+            fill="url(#g4)"></path>
+        <path
+            d="M0 -81.1C8.3 -74.1 16.5 -67.2 26.5 -64.1C36.6 -61 48.3 -61.9 57 -57C65.7 -52.1 71.4 -41.5 74.9 -31C78.5 -20.6 79.8 -10.3 81.1 0L0 0Z"
+            fill="url(#g3)"></path>
+        <path
+            d="M0 -54.1C5.5 -49.4 11 -44.8 17.7 -42.7C24.4 -40.7 32.2 -41.3 38 -38C43.8 -34.8 47.6 -27.7 50 -20.7C52.3 -13.7 53.2 -6.9 54.1 0L0 0Z"
+            fill="url(#g2)"></path>
+        <path
+            d="M0 -27C2.8 -24.7 5.5 -22.4 8.8 -21.4C12.2 -20.3 16.1 -20.6 19 -19C21.9 -17.4 23.8 -13.8 25 -10.3C26.2 -6.9 26.6 -3.4 27 0L0 0Z"
+            fill="url(#g1)"></path>
+    </g>
+</svg>
