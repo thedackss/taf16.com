@@ -10,6 +10,13 @@ RUN npm ci
 
 COPY . .
 
+ARG VITE_apiKey
+ARG VITE_authDomain
+ARG VITE_projectId
+ARG VITE_storageBucket
+ARG VITE_messagingSenderId
+ARG VITE_appId
+
 # Build the application
 RUN npm run build
 
