@@ -3,6 +3,11 @@ import { createRoot } from "react-dom/client";
 import { routeTree } from "./routeTree.gen";
 import { StrictMode } from "react";
 import "./styles/index.scss";
+import app from "./firebase/config";
+
+if (app) {
+    console.log("🔥 Firebase successfully connected");
+}
 
 const router = createRouter({ routeTree });
 
