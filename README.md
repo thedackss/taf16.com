@@ -1,75 +1,94 @@
-# React + TypeScript + Vite
+# Taf16.com
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Note:** Looking for the previous version of the website? It has been archived at **[old.taf16.com](https://old.taf16.com)**.
 
-Currently, two official plugins are available:
+## 🚀 About The Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Tech Stack
 
-## React Compiler
+- **Core:** [React 19](https://react.dev/) & [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Routing:** [@tanstack/react-router](https://tanstack.com/router)
+- **Backend/Data:** [Firebase](https://firebase.google.com/) (Firestore)
+- **Styling:** SCSS (Sass) & CSS Modules
+- **Containerization:** Docker & Nginx
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 🛠️ Getting Started
 
-Note: This will impact Vite dev & build performances.
+Follow these steps to set up the project locally.
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js (v20+ recommended)
+- npm or yarn
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1.  **Clone the repository**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    ```bash
+    git clone https://github.com/thedackss/taf16.com.git
+    cd taf16.com
+    ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2.  **Install dependencies**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+    ```bash
+    npm install
+    ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+3.  **Configure Environment Variables**
+    Create a `.env` file in the root directory. You will need your Firebase configuration keys.
+
+    ```env
+    VITE_apiKey=your_api_key
+    VITE_authDomain=your_project_id.firebaseapp.com
+    VITE_projectId=your_project_id
+    VITE_storageBucket=your_project_id.firebasestorage.app
+    VITE_messagingSenderId=your_sender_id
+    VITE_appId=your_app_id
+    ```
+
+4.  **Run the development server**
+    ```bash
+    npm run dev
+    ```
+
+## 🗄️ Database Setup (Firestore)
+
+This application relies on two specific collections in Cloud Firestore to function correctly:
+
+1.  **`buttons`**: Documents representing the visible buttons on the homepage.
+    - Fields: `name` (string), `img_link` (string URL), `id` (auto).
+2.  **`links`**: A pool of URLs used for the random link redirection logic.
+    - Fields: `name` (string URL).
+
+## 🐳 Docker Deployment
+
+The project includes a multi-stage `Dockerfile` and a `docker-compose.yml` for easy production deployment using Nginx.
+
+### Using Docker Compose
+
+1.  Ensure your environment variables are set (or pass them via `args` in the compose file if modifying the build process).
+2.  Run the container:
+
+    ```bash
+    docker-compose up -d --build
+    ```
+
+The application will be accessible at `http://localhost:8080`.
+
+### Manual Build
+
+To build the image manually, passing build arguments:
+
+```bash
+docker build \
+  --build-arg VITE_apiKey=... \
+  --build-arg VITE_authDomain=... \
+  --build-arg VITE_projectId=... \
+  --build-arg VITE_storageBucket=... \
+  --build-arg VITE_messagingSenderId=... \
+  --build-arg VITE_appId=... \
+  -t taf16-app .
 ```
