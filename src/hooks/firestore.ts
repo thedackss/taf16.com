@@ -40,7 +40,13 @@ function useFirestore() {
         return buttons;
     }, []);
 
-    return { fetchData, fetchButtons };
+    const fetchLinks = useCallback(async () => {
+        const links = await fetchData("links");
+
+        return links;
+    }, []);
+
+    return { fetchData, fetchButtons, fetchLinks };
 }
 
 export default useFirestore;

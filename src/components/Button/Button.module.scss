@@ -54,7 +54,7 @@
     &.ghost {
         background: transparent;
         color: $color-text;
-        border: none;
+        border: 1px solid rgba(255, 23, 68, 0.2);
 
         &:hover:not(:disabled) {
             background: rgba(255, 23, 68, 0.3);
@@ -77,6 +77,6 @@
 
     &.lg {
         padding: $spacing-md $spacing-lg;
-        font-size: $font-size-lg;
+        font-size: $font-size-xl;
     }
 }
