@@ -1,0 +1,63 @@
+@use '../../styles/variables.scss' as *;
+
+.link {
+  text-decoration: none;
+  transition: all $transition-base;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+
+  &.primary {
+    color: $color-accent;
+
+    &:hover {
+      color: $color-accent-hover;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: $color-accent;
+      transition: width $transition-base;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &.secondary {
+    color: $color-text;
+
+    &:hover {
+      color: $color-accent;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: $color-accent;
+      transition: width $transition-base;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &.ghost {
+    color: $color-text;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}

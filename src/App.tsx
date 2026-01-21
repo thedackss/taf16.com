@@ -1,58 +1,108 @@
-import "./styles/App.scss";
+import { useState } from 'react';
+import { Button, Input, Link, Text } from './components';
+import './styles/index.scss';
 
 function App() {
+    const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
+
     return (
-        <div className="app">
-            <nav className="nav">
-                <div className="nav-container">
-                    <div className="logo">taf16.com</div>
-                    <div className="nav-links">
-                        <a href="#about">About</a>
-                        <a href="#work">Work</a>
-                        <a href="#contact">Contact</a>
+        <div className="container">
+            <div className="demo-section">
+                <Text variant="h1">UI Components</Text>
+                <Text variant="body-sm">A minimal component library for dark interfaces</Text>
+            </div>
+
+            <div className="demo-section">
+                <Text variant="h2">Buttons</Text>
+                <div className="component-grid">
+                    <div>
+                        <Text variant="caption">Primary</Text>
+                        <Button variant="primary" size="md">Click me</Button>
+                    </div>
+                    <div>
+                        <Text variant="caption">Secondary</Text>
+                        <Button variant="secondary" size="md">Click me</Button>
+                    </div>
+                    <div>
+                        <Text variant="caption">Ghost</Text>
+                        <Button variant="ghost" size="md">Click me</Button>
                     </div>
                 </div>
-            </nav>
+            </div>
 
-            <main className="hero">
-                <div className="hero-content">
-                    <h1 className="hero-title">
-                        <span className="title-line">Building Digital</span>
-                        <span className="title-line accent">Experiences</span>
-                    </h1>
-                    <p className="hero-description">
-                        Crafting modern, elegant solutions for the web
-                    </p>
-                    <div className="hero-actions">
-                        <button className="btn btn-primary">Get Started</button>
-                        <button className="btn btn-secondary">Learn More</button>
+            <div className="demo-section">
+                <Text variant="h2">Button Sizes</Text>
+                <div className="component-grid">
+                    <div>
+                        <Text variant="caption">Small</Text>
+                        <Button variant="primary" size="sm">Small</Button>
+                    </div>
+                    <div>
+                        <Text variant="caption">Medium</Text>
+                        <Button variant="primary" size="md">Medium</Button>
+                    </div>
+                    <div>
+                        <Text variant="caption">Large</Text>
+                        <Button variant="primary" size="lg">Large</Button>
                     </div>
                 </div>
-            </main>
+            </div>
 
-            <section className="features" id="about">
-                <div className="features-grid">
-                    <div className="feature-card">
-                        <div className="feature-icon">◆</div>
-                        <h3>Minimalist Design</h3>
-                        <p>Clean, focused interfaces that put content first</p>
+            <div className="demo-section">
+                <Text variant="h2">Inputs</Text>
+                <div className="component-grid">
+                    <div>
+                        <Input
+                            label="Full Name"
+                            placeholder="Enter your name"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            size="md"
+                        />
                     </div>
-                    <div className="feature-card">
-                        <div className="feature-icon">◆</div>
-                        <h3>Modern Stack</h3>
-                        <p>Built with cutting-edge technologies</p>
+                    <div>
+                        <Input
+                            label="Email"
+                            type="email"
+                            placeholder="you@example.com"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            size="md"
+                        />
                     </div>
-                    <div className="feature-card">
-                        <div className="feature-icon">◆</div>
-                        <h3>Performance</h3>
-                        <p>Optimized for speed and efficiency</p>
+                    <div>
+                        <Input
+                            label="Password"
+                            type="password"
+                            placeholder="••••••••"
+                            size="md"
+                        />
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <footer className="footer">
-                <p>© 2024 taf16.com. All rights reserved.</p>
-            </footer>
+            <div className="demo-section">
+                <Text variant="h2">Links</Text>
+                <div className="component-grid">
+                    <Link variant="primary" href="#">Primary Link</Link>
+                    <Link variant="secondary" href="#">Secondary Link</Link>
+                    <Link variant="ghost" href="#">Ghost Link</Link>
+                </div>
+            </div>
+
+            <div className="demo-section">
+                <Text variant="h2">Typography</Text>
+                <div className="component-stack">
+                    <Text variant="h1">Heading 1</Text>
+                    <Text variant="h2">Heading 2</Text>
+                    <Text variant="h3">Heading 3</Text>
+                    <Text variant="h4">Heading 4</Text>
+                    <Text variant="body">Body text - Regular weight with comfortable line height</Text>
+                    <Text variant="body-sm">Small body text - Secondary information</Text>
+                    <Text variant="caption">Caption text - Tertiary details</Text>
+                </div>
+            </div>
         </div>
     );
 }

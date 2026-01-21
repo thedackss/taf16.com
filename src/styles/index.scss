@@ -1,11 +1,82 @@
+@use './variables.scss' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background-color: $color-bg;
+  color: $color-text;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
-    min-height: 100vh;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-2xl $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2xl;
+}
+
+.demo-section {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+
+  h1, h2, h3, h4 {
+    color: $color-accent;
+  }
+}
+
+.component-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: $spacing-lg;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    padding: $spacing-lg;
+    background: $color-bg-secondary;
+    border: 1px solid $color-border;
+    border-radius: $border-radius-md;
+  }
+}
+
+.component-stack {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  padding: $spacing-lg;
+  background: $color-bg-secondary;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-md;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: $spacing-lg $spacing-md;
+    gap: $spacing-lg;
+  }
+
+  .component-grid {
+    grid-template-columns: 1fr;
+  }
 }

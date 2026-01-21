@@ -1,0 +1,78 @@
+@use '../../styles/variables.scss' as *;
+
+.button {
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  border: none;
+  border-radius: $border-radius-sm;
+  cursor: pointer;
+  transition: all $transition-base;
+  font-family: inherit;
+  white-space: nowrap;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &.primary {
+    background: $color-accent;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background: $color-accent-hover;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255, 23, 68, 0.3);
+    }
+
+    &:active:not(:disabled) {
+      transform: translateY(0);
+    }
+  }
+
+  &.secondary {
+    background: transparent;
+    color: $color-text;
+    border: 1px solid $color-text-secondary;
+
+    &:hover:not(:disabled) {
+      border-color: $color-accent;
+      color: $color-accent;
+      background: rgba(255, 23, 68, 0.05);
+    }
+
+    &:active:not(:disabled) {
+      background: rgba(255, 23, 68, 0.1);
+    }
+  }
+
+  &.ghost {
+    background: transparent;
+    color: $color-text;
+    border: none;
+
+    &:hover:not(:disabled) {
+      color: $color-accent;
+    }
+
+    &:active:not(:disabled) {
+      opacity: 0.8;
+    }
+  }
+
+  &.sm {
+    padding: $spacing-xs $spacing-sm;
+    font-size: $font-size-sm;
+  }
+
+  &.md {
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-base;
+  }
+
+  &.lg {
+    padding: $spacing-md $spacing-lg;
+    font-size: $font-size-lg;
+  }
+}
