@@ -7,6 +7,8 @@ import app from "./firebase/config";
 
 if (app) {
     console.log("🔥 Firebase successfully connected");
+} else {
+    console.error("❌ Firebase connection failed");
 }
 
 const router = createRouter({ routeTree });
